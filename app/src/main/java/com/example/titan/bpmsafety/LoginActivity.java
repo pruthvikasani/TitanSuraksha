@@ -225,7 +225,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.d("Password",password.getText().toString());
             JSONParser_with_httpURLConnection.userName = "e"+employeeId.trim();
             JSONParser_with_httpURLConnection.mpassword = password.getText().toString().trim();
-            NavDrawer.employee_id = employeeId.trim();
+            NavDrawer.employee_id = "e"+employeeId.trim();
             jsonObject.put("refresh-groups","false");
             jsonObject.put("requested-lifetime","7200");
 
