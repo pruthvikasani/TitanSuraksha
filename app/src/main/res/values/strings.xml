@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">SAFETY ALERT PROCESS</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string-array name="reporting_person">
+        <item>Select</item>
+        <item>Self</item>
+        <item>Other Employees</item>
+        <item>Temporary Work Force</item>
+        <item>Visitor</item>
+    </string-array>
+
+    <string name="forgot_password">forgot password? <font color="@android:color/forgot_password"><u>Get help signing in</u></font></string>
+
+    <string-array name="reported_location">
+        <item>Select</item>
+        <item>Corporate Office</item>
+        <item>Eyewear-Chikkaballapur</item>
+        <item>Jewellery-Dehradun</item>
+        <item>Jewellery-Hosur</item>
+        <item>Jewellery-Pant Nagar</item>
+        <item>Jewellery-Sikkim</item>
+        <item>MBA-Hosur</item>
+        <item>PECSA-Hosur</item>
+        <item>RO-East</item>
+        <item>RO-North</item>
+        <item>RO-South</item>
+        <item>RO-West</item>
+        <item>Satellite Lens Lab-Kolkata</item>
+        <item>Watches-Coimbatore</item>
+        <item>Watches-Dehradun</item>
+        <item>Watches-Hosur</item>
+        <item>Watches-Pant Nagar</item>
+        <item>Watches-Roorkee</item>
+        <item>Watches-Sikkim</item>
+    </string-array>
+
+
+    <string-array name="store_type">
+        <item>Select</item>
+        <item>Retail</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="brand">
+        <item>Select</item>
+        <item>EYEPLUS</item>
+        <item>FASHION QUOTIENT</item>
+        <item>FASTRACK</item>
+        <item>FASTRACK KIOSK</item>
+        <item>HELIOS</item>
+        <item>MIA</item>
+        <item>SPEXX</item>
+        <item>TANISHQ</item>
+        <item>WOT</item>
+        <item>ZOYA</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+
+
+
+
+
+
+
+
+
+

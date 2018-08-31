@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "127763728954",
+    "firebase_url": "https://titan-suraksha-94097.firebaseio.com",
+    "project_id": "titan-suraksha-94097",
+    "storage_bucket": "titan-suraksha-94097.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127763728954:android:8f6f2ec4c3d2591e",
+        "android_client_info": {
+          "package_name": "com.titan.suraksha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127763728954-fh3ik3uj1vte0lnbhitvtka86t8cpp11.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPC7KDe2UY85ws6Bij2eI657_jWunRquU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
