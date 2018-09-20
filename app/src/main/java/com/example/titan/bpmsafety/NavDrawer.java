@@ -781,7 +781,7 @@ public class NavDrawer extends AppCompatActivity
 
             mainJSONObject.put("input", jsonArray);
 
-            Log.d("Input json object", mainJSONObject.toString());
+            //Log.d("Input json object", mainJSONObject.toString());
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -799,7 +799,7 @@ public class NavDrawer extends AppCompatActivity
 
 
         JSONParser_with_httpURLConnection_AlertDetails jsonParser_with_httpURLConnection_details = new JSONParser_with_httpURLConnection_AlertDetails();
-        String url_details = "https://ebpm.titan.co.in/bpm/processes?model=Safety%20Alert%20Process&container=SFTYA";
+        String url_details = "https://guna.titan.in:8443/bpm/processes?model=Safety%20Alert%20Process&container=SFTYA";
         JSONObject json_details = new JSONObject();
 
         //UAT API: https://guna.titan.in:8443/bpm/processes?model=Safety%20Alert%20Process&container=SFTYA
@@ -819,17 +819,17 @@ public class NavDrawer extends AppCompatActivity
          */
         protected String doInBackground(JSONObject... args) {
             try {
-                //Log.d("JSON Request 1", "JSONObject" + args[0]);
-                Log.d("JSON Request ", "JSONObject" + args[0].toString());
+                ////Log.d("JSON Request 1", "JSONObject" + args[0]);
+                //Log.d("JSON Request ", "JSONObject" + args[0].toString());
 
 //                json = jsonParser_with_httpURLConnection.makeHttpRequest(url,"POST",args[0]);
-//                Log.d("JSON Response 1",json.toString());
+//                //Log.d("JSON Response 1",json.toString());
 
-                //Log.d("JSON Token",json.getString("csrf_token"));
+                ////Log.d("JSON Token",json.getString("csrf_token"));
 
                 JSONParser_with_httpURLConnection_AlertDetails.csrftoken = LoginActivity.token;
                 json_details = jsonParser_with_httpURLConnection_details.makeHttpRequest(url_details, "POST", args[0]);
-                Log.d("JSON Response ", json_details.toString());
+                //Log.d("JSON Response ", json_details.toString());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -924,7 +924,7 @@ public class NavDrawer extends AppCompatActivity
     public void onTimeSet(TimePicker timePicker, int i, int i1) {
         hourFinal = i;
         miunteFinal = i1;
-        Log.d("1 hour", Integer.toString(timePicker.getCurrentHour()));
+        //Log.d("1 hour", Integer.toString(timePicker.getCurrentHour()));
 
         String AM_PM = "";
 
@@ -1267,7 +1267,7 @@ public class NavDrawer extends AppCompatActivity
                     Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
                     image_layout.setVisibility(View.VISIBLE);
                     IvImage.setVisibility(View.VISIBLE);
-                    Log.d("URI", String.valueOf(selectedImageUri));
+                    //Log.d("URI", String.valueOf(selectedImageUri));
                     //Uri selectedImageUrl = data.getData();
                     IvImage.setImageBitmap(imageBitmap);
 
@@ -1340,7 +1340,7 @@ public class NavDrawer extends AppCompatActivity
                         tv_employeecode.setVisibility(View.GONE);
                         et_employeecode.setVisibility(VISIBLE);
 
-                        Log.d("Employee id is ", employee_code_number);
+                        //Log.d("Employee id is ", employee_code_number);
                     }
 
                 } else {
@@ -1353,7 +1353,7 @@ public class NavDrawer extends AppCompatActivity
                 report_location = parent.getItemAtPosition(position).toString();
                 if (report_location.equals("RO-East") || report_location.equals("RO-West") || report_location.equals("RO-North") || report_location.equals("RO-South")) {
 
-                    Log.d("Report location:",report_location);
+                    //Log.d("Report location:",report_location);
 
                     LinearLayout store_type_layout = findViewById(R.id.store_type_layout);
                     store_type_layout.setVisibility(VISIBLE);

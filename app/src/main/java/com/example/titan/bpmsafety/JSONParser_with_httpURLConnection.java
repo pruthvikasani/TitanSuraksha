@@ -68,7 +68,7 @@ public class JSONParser_with_httpURLConnection {
 
                 byte[] data = userCredentials.getBytes(StandardCharsets.UTF_8);
                 basicAuth = "Basic "+ Base64.encodeToString(data,Base64.DEFAULT);
-                    Log.d("userCred", basicAuth);
+                    //Log.d("userCred", basicAuth);
                 conn.setRequestProperty("Authorization", basicAuth);
 
                 conn.setRequestProperty("Content-Type", "application/json");
@@ -79,7 +79,7 @@ public class JSONParser_with_httpURLConnection {
                 conn.connect();
 
                 paramsString = params.toString();
-                Log.d("JSON Params", paramsString);
+                //Log.d("JSON Params", paramsString);
                 wr = new DataOutputStream(conn.getOutputStream());
                 wr.writeBytes(paramsString);
                 wr.flush();
@@ -90,16 +90,16 @@ public class JSONParser_with_httpURLConnection {
 
 
                 //Receive the response from the server
-                Log.d("Response code", conn.getResponseCode()+"");
+                //Log.d("Response code", conn.getResponseCode()+"");
                 // If response code not 201 then we are returning HTTP Error codes
-                Log.d("Response message", conn.getResponseMessage()+"");
+                //Log.d("Response message", conn.getResponseMessage()+"");
                 if(conn.getResponseCode()!= 201){
                     try {
                         jObj = new JSONObject();
                         jObj.put("Timeout", true);
                         jObj.put("errorNo", conn.getResponseCode());
                         conn.disconnect();
-                        // Log.d("Socket Exception", "TimeOut");
+                        // //Log.d("Socket Exception", "TimeOut");
                         return jObj;
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -115,16 +115,16 @@ public class JSONParser_with_httpURLConnection {
                     result.append(line);
                 }
 
-                Log.d("JSON Parser", "result: " + result.toString());
+                //Log.d("JSON Parser", "result: " + result.toString());
 
             } catch (SocketTimeoutException exc) {
-                Log.d("Socket Exception", "TimeOut");
+                //Log.d("Socket Exception", "TimeOut");
                 try {
                     jObj = new JSONObject();
                     jObj.put("Timeout", true);
                     jObj.put(errorNo, 100);
                     conn.disconnect();
-                    // Log.d("Socket Exception", "TimeOut");
+                    // //Log.d("Socket Exception", "TimeOut");
                     return jObj;
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -133,13 +133,13 @@ public class JSONParser_with_httpURLConnection {
 
             } catch (ConnectException con) {
 
-                Log.d("Connection Exception", "TimeOut");
+                //Log.d("Connection Exception", "TimeOut");
                 try {
                     jObj = new JSONObject();
                     jObj.put("Timeout", true);
                     jObj.put(errorNo, 101);
                     conn.disconnect();
-                    // Log.d("Socket Exception", "TimeOut");
+                    // //Log.d("Socket Exception", "TimeOut");
                     return jObj;
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -157,7 +157,7 @@ public class JSONParser_with_httpURLConnection {
                     ex.printStackTrace();
                 }
             } catch (Exception e) {
-                Log.d(" Exception ", "In JsonParser");
+                //Log.d(" Exception ", "In JsonParser");
                 e.printStackTrace();
                 try {
                     jObj = new JSONObject();
@@ -167,7 +167,7 @@ public class JSONParser_with_httpURLConnection {
                     x.printStackTrace();
                 }
                 conn.disconnect();
-                Log.d(" Exception ", "In JsonParser");
+                //Log.d(" Exception ", "In JsonParser");
                 return jObj;
             }
 
@@ -198,7 +198,7 @@ public class JSONParser_with_httpURLConnection {
                 x.printStackTrace();
             }
 
-            Log.d(" Exception ", "In JsonParser");
+            //Log.d(" Exception ", "In JsonParser");
             return jObj;
         }
 

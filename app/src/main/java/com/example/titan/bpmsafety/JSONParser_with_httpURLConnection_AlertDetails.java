@@ -64,15 +64,15 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                 conn.setRequestMethod("POST");
 
 
-                Log.d("Token here",csrftoken);
+                //Log.d("Token here",csrftoken);
                 //conn.setRequestProperty("BPMCSRFToken", csrftoken);
                     String token = csrftoken;
-                    Log.d("Token again",token);
+                    //Log.d("Token again",token);
                     conn.setRequestProperty("BPMCSRFToken", token);
                     conn.setRequestProperty("Content-Type", "application/json");
                     conn.setRequestProperty("Accept", "application/json");
                     conn.setRequestProperty("Authorization",JSONParser_with_httpURLConnection.basicAuth);
-                    Log.d("Encoded String", JSONParser_with_httpURLConnection.basicAuth);
+                    //Log.d("Encoded String", JSONParser_with_httpURLConnection.basicAuth);
 
                 conn.setReadTimeout(30000);
                 conn.setConnectTimeout(30000);
@@ -80,7 +80,7 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                 conn.connect();
 
                 paramsString = params.toString();
-                Log.d("JSON Params", paramsString);
+                //Log.d("JSON Params", paramsString);
                 wr = new DataOutputStream(conn.getOutputStream());
                 wr.writeBytes(paramsString);
                 wr.flush();
@@ -91,8 +91,8 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
 
 
                 //Receive the response from the server
-                Log.d("Response code", conn.getResponseCode()+"");
-                Log.d("Response message",conn.getResponseMessage()+"");
+                //Log.d("Response code", conn.getResponseCode()+"");
+                //Log.d("Response message",conn.getResponseMessage()+"");
                 // If response code not 201 then we are returning HTTP Error codes
                 if(conn.getResponseCode()!= 201){
                     try {
@@ -100,7 +100,7 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                         jObj.put("Timeout", true);
                         jObj.put("errorNo", conn.getResponseCode());
                         conn.disconnect();
-                        // Log.d("Socket Exception", "TimeOut");
+                        // //Log.d("Socket Exception", "TimeOut");
                         return jObj;
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -116,16 +116,16 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                     result.append(line);
                 }
 
-                Log.d("JSON Parser", "result: " + result.toString());
+                //Log.d("JSON Parser", "result: " + result.toString());
 
             } catch (SocketTimeoutException exc) {
-                Log.d("Socket Exception", "TimeOut");
+                //Log.d("Socket Exception", "TimeOut");
                 try {
                     jObj = new JSONObject();
                     jObj.put("Timeout", true);
                     jObj.put(errorNo, 100);
                     conn.disconnect();
-                    // Log.d("Socket Exception", "TimeOut");
+                    // //Log.d("Socket Exception", "TimeOut");
                     return jObj;
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -134,13 +134,13 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
 
             } catch (ConnectException con) {
 
-                Log.d("Connection Exception", "TimeOut");
+                //Log.d("Connection Exception", "TimeOut");
                 try {
                     jObj = new JSONObject();
                     jObj.put("Timeout", true);
                     jObj.put(errorNo, 101);
                     conn.disconnect();
-                    // Log.d("Socket Exception", "TimeOut");
+                    // //Log.d("Socket Exception", "TimeOut");
                     return jObj;
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -158,7 +158,7 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                     ex.printStackTrace();
                 }
             } catch (Exception e) {
-                Log.d(" Exception ", "In JsonParser");
+                //Log.d(" Exception ", "In JsonParser");
                 e.printStackTrace();
                 try {
                     jObj = new JSONObject();
@@ -168,7 +168,7 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                     x.printStackTrace();
                 }
                 conn.disconnect();
-                Log.d(" Exception ", "In JsonParser");
+                //Log.d(" Exception ", "In JsonParser");
                 return jObj;
             }
 
@@ -199,7 +199,7 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
                 x.printStackTrace();
             }
 
-            Log.d(" Exception ", "In JsonParser");
+            //Log.d(" Exception ", "In JsonParser");
             return jObj;
         }
 

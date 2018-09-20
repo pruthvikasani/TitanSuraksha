@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!employeeId.isEmpty() && !pwd.isEmpty())
                 {
-                    Log.d("Em length",employeeId.length()+"");
+//                    //Log.d("Em length",employeeId.length()+"");
                     if ( employeeId.length() < 4)
                         employee_id.setError("Enter a valid Emp Code");
                     else
@@ -123,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
                                 zeros= zeros+"0";
                             }
                             employeeId = zeros+employeeId;
-                            Log.d("Employee id",employeeId);
+                            //Log.d("Employee id",employeeId);
 
                         }
                         new SyncData().execute(confirmInput(employeeId));
@@ -221,8 +221,8 @@ public class LoginActivity extends AppCompatActivity {
             //jsonObject.put("username", textInputEmployeeCode.getEditText().getText().toString());
             //jsonObject.put("password", textInputPassword.getEditText().getText().toString());
             //JSONParser_with_httpURLConnection jsonParser_with_httpURLConnection = new JSONParser_with_httpURLConnection();
-            Log.d("UserName",employee_id.getText().toString());
-            Log.d("Password",password.getText().toString());
+            //Log.d("UserName",employee_id.getText().toString());
+            //Log.d("Password",password.getText().toString());
             JSONParser_with_httpURLConnection.userName = "e"+employeeId.trim();
             JSONParser_with_httpURLConnection.mpassword = password.getText().toString().trim();
             NavDrawer.employee_id = "e"+employeeId.trim();
@@ -244,7 +244,7 @@ public class LoginActivity extends AppCompatActivity {
         ProgressDialog pDialog;
 
         JSONParser_with_httpURLConnection jsonParser_with_httpURLConnection = new JSONParser_with_httpURLConnection();
-        String url = "https://ebpm.titan.co.in/bpm/system/login";
+        String url = "https://guna.titan.in:8443/bpm/system/login";
         JSONObject json = new JSONObject();
 
         //UAT: https://guna.titan.in:8443/bpm/system/login
@@ -267,11 +267,11 @@ public class LoginActivity extends AppCompatActivity {
         {
             try {
 
-                Log.d("JSON Request", "JSONObject" + args[0].toString());
+                //Log.d("JSON Request", "JSONObject" + args[0].toString());
 
                 json = jsonParser_with_httpURLConnection.makeHttpRequest(url, "POST", args[0]);
-                Log.d("JSONRESPONSE1", json.toString());
-                Log.d("JSON Token",json.getString("csrf_token"));
+                //Log.d("JSONRESPONSE1", json.toString());
+                //Log.d("JSON Token",json.getString("csrf_token"));
                  // Storing the Token to JSON Parser class static variable
                  token = json.getString("csrf_token");
 
