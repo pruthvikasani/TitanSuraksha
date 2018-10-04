@@ -125,9 +125,7 @@ public class NavDrawer extends AppCompatActivity
     static String employee_id;
 
     String value, report_location, store_type, brand;
-    FragmentTransaction fragmentTransaction;
 
-    TextView errorText;
 
     FloatingActionButton fab;
     byte[] byteArray = null;

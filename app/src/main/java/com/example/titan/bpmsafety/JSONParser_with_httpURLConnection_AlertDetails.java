@@ -181,7 +181,8 @@ public class JSONParser_with_httpURLConnection_AlertDetails {
             jObj = new JSONObject(result.toString());
             jObj.put("Timeout", false);
         } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
+//            Log.e("JSON Parser", "Error parsing data " + e.toString());
+            e.printStackTrace();
             try {
                 jObj = new JSONObject();
                 jObj.put("Timeout", true);
